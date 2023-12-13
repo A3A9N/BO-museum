@@ -15,7 +15,7 @@
         }
 
         header, nav, footer {
-            background-color: #848586;
+            background-color: #000000;
             color: #fff;
             text-align: center;
             padding: 1em;
@@ -24,7 +24,27 @@
         header h1 {
             margin: 0;
             font-size: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+            font-size: 1em; /* Reduced font size for the 'About Us' link */
+            transition: color 0.3s ease-in-out;
+        }
+
+        header a:hover {
+            color: #000000;
+        }
+
+        header img {
+            max-width: 70px; /* Increased max width for the image */
+            margin-right: 10px; /* Add some spacing to the right of the image */
+        }   
 
         nav a {
             color: #fff;
@@ -55,7 +75,7 @@
             max-width: 70%;
             border-radius: 8px;
             margin-bottom: 20px;
-            border: 2px solid #848586; /* Added border styling */
+            border: 4px solid #000; /* Updated border styling to be thicker and black */
         }
 
         section p {
@@ -74,7 +94,7 @@
 
 <body>
     <header>
-        <h1>NXT MUSEUM</h1>
+        <h1><img src="Unknown.png" alt="Logo"> <a href="#about-us">About Us</a> | NXT MUSEUM</h1>
     </header>
 
     <nav>
@@ -104,7 +124,7 @@
         <h2>De Ruimte</h2>
         <div>
             <img src="Venue_Hire_Image_3-scaled.jpg" alt="De Ruimte Image">
-            <p>Het museum is gevestigd in een voormalige productiestudio in het hart van Amsterdam-Noord – een plek die zich bij uitstek leent voor het ontdekken, maken en tentoonstellen van mediakunst. Deze vorm van kunst experimenteert met technologische mogelijkheden en toepassingen; dynamisch en niet gebonden aan een vorm. Onze ruimte biedt een broedplaats voor deze vorm van kunst; een plek waar verschillende kunststromingen en wetenschappen samenkomen en tentoongesteld kunnen worden. Een plek voor live performances, educatie, creatie, zang, dans en meer.</p>
+            <p>Het museum is gevestigd in een voormalige productiestudio in het hart van Amsterdam-Noord – een plek die zich bij uitstek leent voor het ontdekken, maken en tentoonstellen van mediakunst. Deze vorm van kunst experimenteert met technologische mogelijkheden en toepassingen; dynamisch en niet gebonden aan een vorm. Onze ruimte biedt een broedplaats voor deze vorm van kunst; een plek waar verschillende kunststromingen</p>
         </div>
     </section>
 

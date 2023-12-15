@@ -45,7 +45,7 @@
         header img {
             max-width: 70px;
             margin-right: 10px;
-        }   
+        }
 
         nav a {
             color: #fff;
@@ -73,14 +73,14 @@
         }
 
         section img {
-            max-width: 100%;
+            max-width: 50%; /* Reduced image size */
             border-radius: 8px;
             margin-bottom: 20px;
             border: 4px solid #000;
         }
 
         section p {
-            max-width: 60%;
+            max-width: 80%;
             margin: 0 auto;
         }
 
@@ -90,12 +90,19 @@
             width: 100%;
             font-size: 0.8em;
         }
+
+        /* Add a new style for the active language */
+        header button.active {
+            background-color: #d3d3d3;
+        }
     </style>
 </head>
 
 <body>
     <header>
         <h1><img src="Unknown.png" alt="Logo"> <a href="about_us.html">About Us</a> | NXT MUSEUM</h1>
+        <button id="languageToggleEN" onclick="changeLanguage('en')" class="active">EN</button>
+        <button id="languageToggleNL" onclick="changeLanguage('nl')">NL</button>
     </header>
 
     <nav>
@@ -105,33 +112,72 @@
     </nav>
 
     <section id="section1">
-        <h2>We are NXT!</h2>
-        <div>
+        <h2 id="section1TitleEN">We are NXT!</h2>
+        <h2 id="section1TitleNL" style="display:none;">Wij zijn NXT!</h2>
+
+        <div class="container">
             <img src="HkPuAonKWnoKP7Hv1mWr4gXjYKgJtahE5hZ3Kl8sAvM.png.webp" alt="We Are NXT! Image">
-            <p>Geluid. Licht. Beweging. Onze zintuigen registreren veranderingen in onze omgeving voordat we het doorhebben. Onbewust. Instinctief. Geen intentie, noch controle. Het zijn reacties die teruggaan naar hoe het menselijk lichaam is geprogrammeerd. Kunst prikkelt de zintuigen, communiceert ideeën, emoties en verhalen; beweegt onze blik en brengt ons nieuwe perspectieven.
-            </p>
+            <p id="section1TextEN">Sound. Light. Movement. Our senses register changes in our environment before we realize it. Unconscious. Instinctive. No intention, no control. These are reactions that go back to how the human body is programmed. Art stimulates the senses, communicates ideas, emotions, and stories; moves our gaze and brings us new perspectives.</p>
+            <p id="section1TextNL" style="display:none;">Geluid. Licht. Beweging. Onze zintuigen registreren veranderingen in onze omgeving voordat we het doorhebben. Onbewust. Instinctief. Geen intentie, noch controle. Het zijn reacties die teruggaan naar hoe het menselijk lichaam is geprogrammeerd. Kunst prikkelt de zintuigen, communiceert ideeën, emoties en verhalen; beweegt onze blik en brengt ons nieuwe perspectieven.</p>
         </div>
     </section>
 
     <section id="section2">
-        <h2>What is NXT?</h2>
-        <div>
+        <h2 id="section2TitleEN">What is NXT?</h2>
+        <h2 id="section2TitleNL" style="display:none;">Wat is NXT?</h2>
+
+        <div class="container">
             <img src="UFO_NXT_Museum2.jpeg" alt="What is NXT? Image">
-            <p>Nxt Museum is het eerste museum in Nederland dat zich volledig richt op mediakunst. We exposeren kunstwerken die gebruik maken van moderne technologieën van het heden en van de toekomst. Omdat kunst de tijdsgeest weerspiegelt, geloven wij dat de meest innovatieve kunst ons de mogelijkheid geeft om op de impact van technologische ontwikkelingen te reflecteren. Een moment van bezinning in een realiteit die alsmaar sneller doorontwikkelt.</p>
+            <p id="section2TextEN">Nxt Museum is the first museum in the Netherlands entirely focused on media art. We exhibit artworks that utilize modern technologies of the present and the future. Because art reflects the spirit of the times, we believe that the most innovative art gives us the opportunity to reflect on the impact of technological developments. A moment of reflection in a reality that is constantly evolving.</p>
+            <p id="section2TextNL" style="display:none;">Nxt Museum is het eerste museum in Nederland dat zich volledig richt op mediakunst. We exposeren kunstwerken die gebruik maken van moderne technologieën van het heden en van de toekomst. Omdat kunst de tijdsgeest weerspiegelt, geloven wij dat de meest innovatieve kunst ons de mogelijkheid geeft om op de impact van technologische ontwikkelingen te reflecteren. Een moment van bezinning in een realiteit die alsmaar sneller doorontwikkelt.</p>
         </div>
     </section>
 
     <section id="section3">
-        <h2>De Ruimte</h2>
-        <div>
+        <h2 id="section3TitleEN">De Ruimte</h2>
+        <h2 id="section3TitleNL" style="display:none;">The Space</h2>
+
+        <div class="container">
             <img src="Venue_Hire_Image_3-scaled.jpg" alt="De Ruimte Image">
-            <p>Het museum is gevestigd in een voormalige productiestudio in het hart van Amsterdam-Noord – een plek die zich bij uitstek leent voor het ontdekken, maken en tentoonstellen van mediakunst. Deze vorm van kunst experimenteert met technologische mogelijkheden en toepassingen; dynamisch en niet gebonden aan een vorm. Onze ruimte biedt een broedplaats voor deze vorm van kunst; een plek waar verschillende kunststromingen</p>
+            <p id="section3TextEN">The museum is located in a former production studio in the heart of Amsterdam-Noord – a place that is ideal for exploring, creating, and exhibiting media art. This form of art experiments with technological possibilities and applications; dynamic and not bound to a form. Our space provides a breeding ground for this form of art; a place where different art movements</p>
+            <p id="section3TextNL" style="display:none;">Het museum is gevestigd in een voormalige productiestudio in het hart van Amsterdam-Noord – een plek die zich bij uitstek leent voor het ontdekken, maken en tentoonstellen van mediakunst. Deze vorm van kunst experimenteert met technologische mogelijkheden en toepassingen; dynamisch en niet gebonden aan een vorm. Onze ruimte biedt een broedplaats voor deze vorm van kunst; een plek waar verschillende kunststromingen</p>
         </div>
     </section>
 
     <footer>
         <p>&copy; Made by Troy & Adrian. All rights reserved.</p>
     </footer>
+
+    <script>
+        function changeLanguage(language) {
+            // Update active state of language buttons
+            const buttons = document.querySelectorAll('button[id^="languageToggle"]');
+            buttons.forEach(button => button.classList.remove('active'));
+            document.getElementById(`languageToggle${language.toUpperCase()}`).classList.add('active');
+
+            // Show/hide content based on the selected language
+            const isEnglish = language === 'en';
+            const isDutch = language === 'nl';
+
+            // Section 1
+            document.getElementById('section1TitleEN').style.display = isEnglish ? 'block' : 'none';
+            document.getElementById('section1TitleNL').style.display = isDutch ? 'block' : 'none';
+            document.getElementById('section1TextEN').style.display = isEnglish ? 'block' : 'none';
+            document.getElementById('section1TextNL').style.display = isDutch ? 'block' : 'none';
+
+            // Section 2
+            document.getElementById('section2TitleEN').style.display = isEnglish ? 'block' : 'none';
+            document.getElementById('section2TitleNL').style.display = isDutch ? 'block' : 'none';
+            document.getElementById('section2TextEN').style.display = isEnglish ? 'block' : 'none';
+            document.getElementById('section2TextNL').style.display = isDutch ? 'block' : 'none';
+
+            // Section 3
+            document.getElementById('section3TitleEN').style.display = isEnglish ? 'block' : 'none';
+            document.getElementById('section3TitleNL').style.display = isDutch ? 'block' : 'none';
+            document.getElementById('section3TextEN').style.display = isEnglish ? 'block' : 'none';
+            document.getElementById('section3TextNL').style.display = isDutch ? 'block' : 'none';
+        }
+    </script>
 </body>
 
 </html>

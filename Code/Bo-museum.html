@@ -64,28 +64,27 @@
 
     <script>
         function changeLanguage(language) {
-            // Update active state of language buttons
+           
             const buttons = document.querySelectorAll('button[id^="languageToggle"]');
             buttons.forEach(button => button.classList.remove('active'));
             document.getElementById(`languageToggle${language.toUpperCase()}`).classList.add('active');
 
-            // Show/hide content based on the selected language
+            
             const isEnglish = language === 'en';
             const isDutch = language === 'nl';
 
-            // Section 1
             document.getElementById('section1TitleEN').style.display = isEnglish ? 'block' : 'none';
             document.getElementById('section1TitleNL').style.display = isDutch ? 'block' : 'none';
             document.getElementById('section1TextEN').style.display = isEnglish ? 'block' : 'none';
             document.getElementById('section1TextNL').style.display = isDutch ? 'block' : 'none';
 
-            // Section 2
+         
             document.getElementById('section2TitleEN').style.display = isEnglish ? 'block' : 'none';
             document.getElementById('section2TitleNL').style.display = isDutch ? 'block' : 'none';
             document.getElementById('section2TextEN').style.display = isEnglish ? 'block' : 'none';
             document.getElementById('section2TextNL').style.display = isDutch ? 'block' : 'none';
 
-            // Section 3
+          
             document.getElementById('section3TitleEN').style.display = isEnglish ? 'block' : 'none';
             document.getElementById('section3TitleNL').style.display = isDutch ? 'block' : 'none';
             document.getElementById('section3TextEN').style.display = isEnglish ? 'block' : 'none';
